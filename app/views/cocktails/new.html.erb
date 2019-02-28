@@ -1,0 +1,14 @@
+<h1>Create a new cocktail!</h1>
+<% if @cocktail.errors.any? %>
+    <div class="errors-container">
+      <ul>
+        <% @cocktail.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>
+<%= simple_form_for (@cocktail) do |f| %>
+  <%= f.input :name %>
+  <%= f.submit "add a new cocktail", class: "btn btn-primary" %>
+<% end %>
