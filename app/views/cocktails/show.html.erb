@@ -1,5 +1,16 @@
 
 <h1><%= @cocktail.name %></h1>
+<% if @cocktail.photo.present?%>
+  <p>
+    <%= image_tag("#{@cocktail.photo}",
+        width: 400, height: 300, crop: :fill) %>
+  </p>
+<% else %>
+  <p>
+    <%= image_tag("https://source.unsplash.com/600x600/?cocktail, beverages, #{@cocktail.name}",
+        width: 400, height: 300, crop: :fill) %>
+  </p>
+<% end %>
 <p>
   <% @cocktail.doses.each do |dose| %>
     <p>
