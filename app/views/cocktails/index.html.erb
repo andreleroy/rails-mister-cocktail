@@ -4,10 +4,10 @@
     <% @cocktails.each do |cocktail| %>
     <div class="col-xs-12 col-sm-4">
       <%= link_to cocktail_path(cocktail) do %>
-      <div class="card" style="background-image: url('https://source.unsplash.com/600x600/?cocktail, beverages, <%= cocktail.name %>')">
-        <h4><%= cocktail.name %></h4>
+        <div class="card" style="background-image: url('https://source.unsplash.com/600x600/?cocktail, beverages, <%= cocktail.name %>')">
+          <h4><%= cocktail.name %></h4>
+        </div>
       <% end %>
-      </div>
     </div>
       <% end %>
   </div>
