@@ -1,45 +1,65 @@
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://blogmedia.evbstatic.com/wp-content/uploads/rally-legacy/2018/03/28154125/7-Stylish-Bars-and-Restaurants-in-San-Francisco-1500x750.png');">
+  <div class="banner-content">
+    <span id="banner-typed-text"></span>
+  </div>
+</div>
+<div class="nav-bar-wrapper">
+  <div class="navbar-wagon">
+    <!-- Logo -->
+    <a href="/" class="navbar-wagon-brand">
+      <img src="http://pngimg.com/uploads/cocktail/cocktail_PNG162.png" alt="logo">
+    </a>
+    <div class="cocktail-title">
+      <h1>Cocktails</h1>
+    </div>
+
+    <!-- Right Navigation -->
+    <div class="navbar-wagon-right hidden-xs hidden-sm">
+
+      <div class="button wrapper">
+        <button class="add-btn">
+          <%= link_to "Add a new cocktail", new_cocktail_path %>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="container">
-  <h1>Cocktails</h1>
   <div class="row">
     <% @cocktails.each do |cocktail| %>
     <div class="col-xs-12 col-sm-4">
       <%= link_to cocktail_path(cocktail) do %>
-        <% if cocktail.photo.present?%>
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-           url('<%= cl_image_path cocktail.photo %>')">
-            <div class="card-description">
-              <h2><%= cocktail.name %></h2>
-              <% cocktail.doses.each do |dose| %>
-                <li class="list-inline">
-                  <p><%= dose.description %>
-                     <%= dose.ingredient.name %>
-                  </p>
-                </li>
-              <% end %>
-            </div>
-          </div>
-        <% else %>
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-           url('https://source.unsplash.com/600x600/?cocktail, beverages, <%= cocktail.name %>')">
-            <div class="card-description">
-              <h2><%= cocktail.name %></h2>
-              <% cocktail.doses.each do |dose| %>
-                <li class="list-inline">
-                  <p><%= dose.description %>
-                     <%= dose.ingredient.name %>
-                  </p>
-                </li>
-              <% end %>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-      <% end %>
-  </div>
-  <div class="button-wrapper">
-    <button class="add-btn">
-      <%= link_to "Add a new cocktail", new_cocktail_path %>
-    </button>
-  </div>
+      <% if cocktail.photo.present?%>
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+      url('<%= cl_image_path cocktail.photo %>')">
+      <div class="card-description">
+        <h2><%= cocktail.name %></h2>
+        <% cocktail.doses.each do |dose| %>
+        <li class="list-inline">
+          <p><%= dose.description %>
+           <%= dose.ingredient.name %>
+         </p>
+       </li>
+       <% end %>
+     </div>
+   </div>
+   <% else %>
+   <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+   url('https://source.unsplash.com/600x600/?cocktail, beverages, <%= cocktail.name %>')">
+   <div class="card-description">
+    <h2><%= cocktail.name %></h2>
+    <% cocktail.doses.each do |dose| %>
+    <li class="list-inline">
+      <p><%= dose.description %>
+       <%= dose.ingredient.name %>
+     </p>
+   </li>
+   <% end %>
+ </div>
+</div>
+<% end %>
+<% end %>
+</div>
+<% end %>
+</div>
 </div>

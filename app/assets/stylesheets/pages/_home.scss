@@ -1,39 +1,8 @@
 // Specific CSS for your home-page
-@import url('https://fonts.googleapis.com/css?family=Romanesco');
-
 body {
   background: lightyellow;
 }
 
-h1 {
+.row {
   margin: 50px 0px;
-  text-align: center;
-  font-family: 'Romanesco', cursive;
-  font-size: 100px;
-}
-
-.add-btn {
-  width: 20%;
-  background-color: #F67280;
-  border-radius: 5px;
-  margin: 40px 0px;
-  padding: 10px 40px;
-  font-family: 'Romanesco', cursive;
-  color: black;
-  font-size: 30px;
-} a {
-  color: black;
-}
-
-.add-btn:hover {
-  border: 1px solid black;
-  color: black;
-  text-decoration: underline;
-  background-color: #F67280;
-} a:hover {
-  color: black;
-}
-
-.button-wrapper {
-  text-align: center;
 }
